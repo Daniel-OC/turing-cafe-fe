@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AllRezzies from '../Components/AllRezzies/AllRezzies'
 import Form from '../Components/Form/Form'
+import { getAllReservations } from '../apiCalls';
 
 class App extends Component {
   constructor() {
@@ -73,7 +74,14 @@ class App extends Component {
     }
   }
 
-  componentDidMount
+  componentDidMount() {
+    getAllReservations()
+    .then(data => {
+      console.log(data)
+      this.setState({reservations: data})
+      console.log(this.state)
+    })
+  }
   
   addReservation = (newRezzy) => {
     this.setState({reservations: [...this.state.reservations, newRezzy]})
