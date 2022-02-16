@@ -32,10 +32,10 @@ class Form extends React.Component{
   render() {
     return (
       <section className='userForm'>
-        <input name='name' value={this.state.name} onChange={event => this.handleChange(event)} placeholder='Name'></input>
-        <input name='date' value={this.state.date} onChange={event => this.handleChange(event)} placeholder='Date (mm/dd)'></input>
-        <input name='time' value={this.state.time} onChange={event => this.handleChange(event)} placeholder='Time'></input>
-        <input name='guests' value={this.state.guests} onChange={event => this.handleChange(event)} placeholder='Number of guests'></input>
+        <input className ='nameInput' name='name' value={this.state.name} onChange={event => this.handleChange(event)} placeholder='Name'></input>
+        <input className ='dateInput' name='date' value={this.state.date} onChange={event => this.handleChange(event)} placeholder='Date (mm/dd)'></input>
+        <input className ='timeInput' name='time' value={this.state.time} onChange={event => this.handleChange(event)} placeholder='Time'></input>
+        <input  className ='guestsInput' name='guests' value={this.state.guests} onChange={event => this.handleChange(event)} placeholder='Number of guests'></input>
         <button className='make-rez' onClick={() => this.pushReservationUp()}>Make Reservation</button>
       </section>
     )
