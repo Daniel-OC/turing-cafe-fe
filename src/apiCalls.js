@@ -11,4 +11,11 @@ const getAllReservations = () => {
   .then(response => checkForError(response))
 }
 
-export {getAllReservations}
+const addReservationToApi = (reservation) => {
+  return fetch('http://localhost:3001/api/v1/reservations', {
+    method: 'POST',
+    body: {name: reservation.name, date: reservation.date, time: reservation.time, number: reservation.number}
+  })
+}
+
+export {getAllReservations, addReservationToApi}

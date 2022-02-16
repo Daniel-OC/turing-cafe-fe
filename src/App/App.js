@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AllRezzies from '../Components/AllRezzies/AllRezzies'
 import Form from '../Components/Form/Form'
-import { getAllReservations } from '../apiCalls';
+import { getAllReservations, addReservationToApi } from '../apiCalls';
 
 class App extends Component {
   constructor() {
@@ -19,10 +19,18 @@ class App extends Component {
       this.setState({reservations: data})
       console.log(this.state)
     })
+    .catch(error => console.log(error))
   }
   
+
   addReservation = (newRezzy) => {
-    this.setState({reservations: [...this.state.reservations, newRezzy]})
+    addReservationToApi(newRezzy)
+    .then(() => 
+      getAllReservations()
+      .then(data => this.setState({reservations: data})
+      .catch(error => console.log(error)))
+    .catch(error => console.log(error)
+    ))
   }
 
   render() {
