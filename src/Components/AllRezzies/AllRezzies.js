@@ -18,3 +18,5 @@ const AllRezzies = (props) => {
   {allReservations}
   </>)
 }
+
+export default AllRezzies;
