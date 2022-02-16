@@ -72,6 +72,8 @@ class App extends Component {
       }]
     }
   }
+
+  componentDidMount
   
   addReservation = (newRezzy) => {
     this.setState({reservations: [...this.state.reservations, newRezzy]})
