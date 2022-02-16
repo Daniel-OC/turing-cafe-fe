@@ -1,0 +1,17 @@
+.userForm {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.make-rez {
+  width: 20%;
+  height: 60%;
+  border: .05em solid #f2f2f2
+}
+
+input {
+  height: 50%;
+  width: 12%;
+}

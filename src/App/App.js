@@ -72,15 +72,17 @@ class App extends Component {
       }]
     }
   }
+  
+  addReservation = (newRezzy) => {
+    this.setState({reservations: [...this.state.reservations, newRezzy]})
+  }
 
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
-        <div className='resy-form'>
-
-        </div>
-          <AllRezzies reservations={this.state.reservations}/>
+        <Form addReservation={this.addReservation}/>
+        <AllRezzies reservations={this.state.reservations}/>
         
       </div>
     )
