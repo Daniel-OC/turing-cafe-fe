@@ -1,0 +1,8 @@
+.all-reservations {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16%;
+  column-gap: 3em;
+  place-items: center;
+  justify-content: center;
+}

@@ -1,10 +1,10 @@
 import React from 'react'
-import './AllRezzies.scss'
+import './AllRezzies.css'
 import Reservation from '../Reservation/Reservation'
 
 const AllRezzies = (props) => {
 
-  allReservations = props.reservations.map(reservation => {
+  const allReservations = props.reservations.map(reservation => {
     return <Reservation 
       name={reservation.name}
       date={reservation.date}
@@ -14,9 +14,9 @@ const AllRezzies = (props) => {
   })
 
   return(
-  <>
+  <section className='all-reservations'>
   {allReservations}
-  </>)
+  </ section>)
 }
 
 export default AllRezzies;
